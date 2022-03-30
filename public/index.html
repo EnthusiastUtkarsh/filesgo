@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Web App Config -->
-    <title>Snapdrop</title>
+    <title>ShareINgo</title>
+    <!-- <link href="navbar-test.css" rel="stylesheet"/> -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-title" content="Snapdrop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#3367d6">
     <meta name="color-scheme" content="dark light"> 
@@ -188,6 +192,141 @@
         </section>
         <x-background></x-background>
     </x-about>
+    <!-- Toast -->
+<div class="toast-container full center">
+    <x-toast class="row" shadow="1" id="toast">File sent successfully</x-toast>
+</div>
+    <div class="log"><img src="images/oye.png" alt=""></div>
+    <div class="wrapper">
+        <div class="tabs">
+            <ul class="tab-header">
+                <li class="active"  data-id="vision">
+                    <!-- <i  data-id="vision" class='bx bx-text bx-sm bx-tada-hover' ></i> -->
+                    <img src="images/icons8-text-96.png" data-id="vision" id="imgi" id="h12"  class="bx bx-images bx-sm bx-tada-hover">
+
+
+
+                </li>
+                <li data-id="mission">
+                    <!-- <i data-id="mission" class='bx bx-images bx-sm bx-tada-hover'> -->
+                        <img src="images/icons8-image-file-240.png" data-id="mission" id="imgi" class="bx bx-images bx-sm bx-tada-hover">
+
+
+                    </i></li>
+                <li data-id="goals">
+                    <!-- <i data-id="goals" class='bx bxs-file-pdf bx-sm bx-tada-hover' ></i> -->
+                    <img src="images/icons8-pdf-96.png" data-id="goals" id="imgi" class="bx bx-images bx-sm bx-tada-hover">
+
+
+                </li>
+                <li data-id="other">
+                    <!-- <i data-id="other" class='bx bx-music bx-sm bx-tada-hover ' ></i> -->
+                    <img src="images/icons8-music-144.png" data-id="other" id="imgi" class="bx bx-images bx-sm bx-tada-hover">
+
+
+                </li>
+            </ul>
+
+
+            <div class="tab-content">
+
+                <div class="tab-inner active" id="vision">
+                  <section class="upload-container">
+
+                    <form action="">
+                        <div class="drop-zone">
+                            <div class="icon-container">
+                                <img src="images/drag-and-dorp.png" draggable="false" class="center" alt="File Icon">
+                                <img src="images/drag-and-dorp.png" draggable="false" class="left" alt="File Icon">
+                                <img src="images/drag-and-dorp.png" draggable="false" class="right" alt="File Icon">
+                            </div>
+                            <input type="file" id="fileInput">
+                            <div class="title">Drop your Files here or, <span id="browseBtn">browse</span></div>
+                        </div>
+                    </form>
+                    <div class="progress-container">
+                        <div class="bg-progress"></div>
+
+                        <div class="inner-container">
+                            <div class="status">Uploading...</div>
+                            <div class="percent-container">
+                                <span class="percentage" id="progressPercent">0</span>%
+                            </div>
+                            <div class="progress-bar"></div>
+                        </div>
+
+                    </div>
+                    <div class="sharing-container">
+                        <p class="expire">Link expires in 15 mins</p>
+
+
+                        <div class="input-container">
+                            <input type="text" id="fileURL" readonly>
+                            <img src="images/copy-icon.png" id="copyURLBtn" alt="copy to clipboard icon">
+                        </div>
+                        <p class="email-info"></p>
+                        <!-- <div class="">
+                            <form id="emailForm">
+                                <div class="">
+                                    <label for="fromEmail"></label>
+                                    <input type="" autocomplete="email" required name="from-email" id="">
+                                </div>
+
+                                <div class="">
+                                    <label for="toEmail"></label>
+                                    <input type="email" required autocomplete="receiver" name="to-email" id="">
+                                </div>
+                                <div class="send-btn-container">
+                                    <button type=""></button>
+                                </div> -->
+
+
+                    </div>
+                </section>
+                </div>
+                <div class="tab-inner  " id="text-c1">
+                  <!-- <div class="form-element">
+                    <label for="data-ip" id="data-ip-text" >
+
+                      <h1 id="data-ip-h1">Enter your text</h1>
+                      <h5 id="data-ip-h2">Press generate qr code to get your qr code</h5>
+                    </label>
+                    <input type="text" id="data-ip" placeholder="type your text here" >
+                  </div> -->
+                </div>
+                <div class="tab-inner" id="goals">
+                  <div class="form-element">
+                    <label for="data-ip" id="data-ip-text" >
+
+                      <h1 id="data-ip-h1">Enter your text</h1>
+                      <h5 id="data-ip-h2">Press generate qr code to get your qr code</h5>
+                    </label>
+                    <input type="text" id="data-ip" placeholder="type your text here" >
+                  </div>
+                </div>
+                <div class="tab-inner" id="other">
+						<img src="https://picsum.photos/id/240/200/200"/>
+						<p>
+                        Other ipsum dolor sit amet consectetur adipisicing elit. Ab eaque hic non quis quod repudiandae mollitia, cum nemo earum enim veritatis suscipit nesciunt deserunt labore rerum aspernatur consectetur excepturi fugiat!
+						</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="qr-box">
+
+        <!-- qr generator -->
+
+        <h3></h3>
+            <br/>
+            <div>
+                <button class="qr-btn" onclick="generateQRCode()">Create QR Code</button>
+            </div>
+            <br/>
+            <p id="qr-result"></p>
+            <canvas id="qr-code"></canvas>
+          </div>
     <!-- SVG Icon Library -->
     <!-- <svg style="display: none;">
         <symbol id=wifi-tethering viewBox="0 0 24 24">
@@ -242,7 +381,105 @@
         </symbol>
     </svg> -->
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        /* JS comes here */
+        var qr;
+        (function() {
+                qr = new QRious({
+                element: document.getElementById('qr-code'),
+                size: 200,
+                value: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+            });
+        })();
+
+        function generateQRCode() {
+            var qrtext = document.getElementById("fileURL").value;
+            var textt = document.getElementById("data-ip").value;
+
+
+            //document.getElementById("qr-result").innerHTML = "QR code for " + qrtext +":";
+            alert(qrtext);
+          //   qr.set({
+          //       foreground: 'black',
+          //       size: 200,
+          //       value: qrtext
+          //   });
+
+              if(fileURL.value){
+
+                  qr.set({
+                foreground: 'black',
+                size: 200,
+                value: qrtext
+            });
+
+              }
+
+              else{
+                  qr.set({
+                foreground: 'black',
+                size: 200,
+                value: textt
+            });
+              }
+
+
+
+
+
+
+        }
+
+
+
+
+      //   function generateQRCode() {
+      //       var qrtext = document.getElementById("data-ip-text").value;
+      //       //document.getElementById("qr-result").innerHTML = "QR code for " + qrtext +":";
+      //       alert(qrtext);
+      //       qr.set({
+      //           foreground: 'black',
+      //           size: 200,
+      //           value: qrtext
+      //       });
+      //   }
+
+
+
+
+
+
+
+    </script>
+
+<script >
+let tab_header = document.querySelector(".tab-header");
+
+let tabli = document.querySelectorAll(".tab-header img");
+let tab_inner = document.querySelectorAll(".tab-inner");
+console.log(tabli);
+
+tab_header.addEventListener("click", function(e){
+  let id = e.target.dataset.id;
+  if(id)
+  {
+      tabli.forEach(function(li_elem){
+          li_elem.classList.remove("active");
+      })
+      e.target.classList.add("active");
+
+      tab_inner.forEach(function(tabs){
+          tabs.classList.remove("active");
+      });
+      activetab = document.getElementById(id);
+      activetab.classList.add("active");
+  }
+
+});
+</script>
     <script src="scripts/network.js"></script>
+    <script src="scripts/main.js"></script>
     <script src="scripts/ui.js"></script>
     <script src="scripts/theme.js" async></script>
     <script src="scripts/clipboard.js" async></script>
